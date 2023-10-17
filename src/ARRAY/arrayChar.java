@@ -48,6 +48,34 @@ public class arrayChar {
 		System.out.println("Nilai maksimal di-indek array ke: "+ imaks);
 		
 	}
+
+	void nilaiMaks1dan2() {
+		int imaks1 = 0;
+		
+		for(int i=1; i< N; i++) {
+			if(a[i] > a[imaks1]) {
+				imaks1 = i;
+			}
+		}
+		
+		int imaks2 = 0;
+		for(int i=1; i< N; i++) {
+			if(a[i] > a[imaks2]) {
+				if(i != imaks1)
+				imaks2 = i;
+			}
+		}
+		
+
+		System.out.println("Nilai terbesar pertama: "+ a[imaks1]);
+		System.out.println("Nilai terbesar pertama diindex: "+ imaks1);
+		
+		System.out.println("Nilai terbesar kedua: "+ a[imaks2]);
+		System.out.println("Nilai terbesar kedua diindex: "+ imaks2);
+		
+		
+		
+	}
 	
 	void cekPalindrom() {
 		
@@ -108,17 +136,19 @@ public class arrayChar {
 	public static void main(String[] args) {
 		arrayChar A = new arrayChar();
 		arrayChar B = new arrayChar();
+		arrayChar C = new arrayChar();
 		
 		A.isiArray();
 		A.tampilArray();
 		A.nilaiMaksArray();
 		A.nilaiMaksV2Array();
 		A.cekPalindrom();
-		
+		A.MembalikKata(A, C);
+		A.nilaiMaks1dan2();
 		
 		B.isiArray();
 		B.tampilArray();
-		B.MembalikKata(A, B);
+		
 //		SalinLarikAkeB(A,B);
 		System.out.println("Array A dan B sama? " + isSamaAB(A,B));
 	}
